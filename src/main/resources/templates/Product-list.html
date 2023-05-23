@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<h1>商品一覧</h1>
 <table class="bordered-table">
   <tr>
     <th>ID</th>
@@ -15,12 +16,17 @@
   <tr th:each="product : ${products}">
 <!--    <td th:text="${product.id}"></td>-->
     <td>
-      <a th:href="@{'/products/' + ${product.id}}"><span th:text="${product.id}"></span></a>
+      <a th:href="@{'/products/' + ${product.id}}">
+          <span th:text="${product.id}"></span>
+      </a>
     </td>
     <td th:text="${product.name}"></td>
     <td th:text="${product.price}"></td>
   </tr>
   </table>
+<form action="/insertProduct" method="Get">
+    <p><button type="submit">追加画面へ</button></p>
+</form>
 
 </body>
 </html>

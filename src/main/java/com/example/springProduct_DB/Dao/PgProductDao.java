@@ -28,4 +28,35 @@ public class PgProductDao implements ProductDao{
         return list.isEmpty() ? null : list.get(0);
     }
 
+    @Override
+    public int insert(ProductRecord productRecord) {
+        MapSqlParameterSource param = new MapSqlParameterSource();
+        param.addValue("name", productRecord.name());
+        param.addValue("price", productRecord.price());
+        int count = jdbcTemplate.update("INSERT INTO products" +
+                "(name, price)" +
+                " VALUES (:name, :price)",param);
+        return count == 1 ? count : null;
+    }
+
+    @Override
+    public int update(ProductRecord productRecord) {
+        MapSqlParameterSource param = new MapSqlParameterSource();
+        param.addValue("id", productRecord.id());
+        param.addValue("name", productRecord.name());
+        param.addValue("price", productRecord.price());
+        int count = jdbcTemplate.update("UPDATE products" +
+                " SET name = :name, price = :price" +
+                " WHERE id = :id",param);
+        return count;
+    }
+
+    @Override
+    public int delete(int id) {
+        MapSqlParameterSource param = new MapSqlParameterSource();
+        param.addValue("id", id);
+        int count = jdbcTemplate.update("DELETE FROM products WHERE id = :id",param);
+        return count;
+    }
+
 }

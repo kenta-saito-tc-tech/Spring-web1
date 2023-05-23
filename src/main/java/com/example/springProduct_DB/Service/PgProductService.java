@@ -19,4 +19,19 @@ public class PgProductService implements ProductService{
     public ProductRecord findById(int id) {
         return productDao.findById(id);
     }
+
+    @Override
+    public int insert(ProductRecord productRecord) {
+        return productDao.insert(productRecord);
+    }
+
+    @Override
+    public int update(ProductRecord productRecord) {
+        return productDao.update(productRecord);
+    }
+
+    @Override
+    public int delete(int id) {
+        return productDao.delete(id);
+    }
 }

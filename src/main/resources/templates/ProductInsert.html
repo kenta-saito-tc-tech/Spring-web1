@@ -2,26 +2,22 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Product Web</title>
+  <title>Insert Product</title>
 </head>
 <body>
-<h1>商品詳細</h1>
-<form action="/update" method="post" th:object="${productForm}">
-  <p>ID:</p>
-  <p><input type="text" th:field="*{Id}" readonly></p>
+<h1>商品追加</h1>
+<form action="/insert" method="post" th:object="${productForm}">
   <p>商品名:</p>
-  <p><input type="text" th:field="*{name}"></p>
+  <p><input type="text"  th:field="*{name}"></p>
   <div class="error" th:each="error: ${#fields.errors('name')}">
-  [[ ${error} ]]
+    [[ ${error} ]]
   </div>
   <p>値段:</p>
   <p><input type="text" th:field="*{price}"></p>
   <div class="error" th:each="error: ${#fields.errors('price')}">
     [[ ${error} ]]
   </div>
-  <p><button type="submit" name = "updatePr">更新</button></p>
-  <p><button type="submit" name = "deletePr">削除</button></p>
+  <p><button type="submit">追加</button></p>
 </form>
-
 </body>
 </html>
