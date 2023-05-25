@@ -15,6 +15,12 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
+    //表示用
+    @GetMapping("/product2-list")
+    public String product2listView(){
+        return "/product2-list";
+    }
+
     @GetMapping("/product-list")
     public String productList(Model model){
         var list = productService.findAll();

@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f2f2f2;
+  margin-bottom: 10px;
+}
+
+li:hover {
+  background-color: #e6e6e6;
+}
+
+li.selected {
+  background-color: #ccc;
+}
+
+#details-section {
+  display: none;
+  margin-top: 20px;
+}
+
+#details-section input {
+  margin-bottom: 10px;
+}
+
+#add-section {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+#add-section input,
+#add-section button {
+  margin-bottom: 10px;
+}
+
+#add-section h2 {
+  margin-top: 0;
+}
+
+.error-message {
+  color: red;
+}
