@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((response) => {
           if (response.ok) {
             console.log('PUT request processed');
+            renderProductList();
           } else {
             console.error('PUT request failed');
           }
@@ -81,8 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch((error) => {
           console.error('Error:', error);
         });
-
-        renderProductList();
         hideDetailsSection();
       }
 
@@ -104,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
          .then((response) => {
            if (response.ok) {
              console.log('DELETE request processed');
+             renderProductList();
            } else {
              console.error('DELETE request failed');
            }
@@ -112,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
            console.error('Error:', error);
          });
 
-        renderProductList();
         hideDetailsSection();
       }
 
@@ -139,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((response) => {
           if (response.ok) {
             console.log('POST request processed');
+            renderProductList();
           } else {
             console.error('POST request failed');
           }
@@ -146,9 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch((error) => {
           console.error('Error:', error);
         });
-       
-
-        renderProductList();
 
         // 入力フィールドをクリアする
         nameInput.value = '';
